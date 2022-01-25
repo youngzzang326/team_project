@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>one2one list</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');
+    *{ margin:0; padding:0; }
+    a{
+        text-decoration: none;
+        color:#484848;
+    }
+    a:hover{
+        text-decoration: none;
+        color:#484848;
+    }
+
+    /*      top nav 부분         */
+    .top_fix{
+        
+        height:35px;
+        font-size: 12px;
+    }
+    .top_nav{
+        background-color: #ffdcdc;
+        height:30px;
+        /* border:1px solid blue; */
+    }
+    .top_nav li{
+        /* border:1px solid red; */
+        color:#484848;
+        font-size: 13px;
+        list-style: none;
+        float: right;
+        display: flex;
+        margin:5px 5px;
+    }
+    .top_nav li:first-child{
+        margin-right: 15px;
+    }
+
+    /*       logo 부분        */
+    .logo{
+        /* border:1px solid orange; */
+        height: 180px;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .logo img{
+        align-items: center;
+        width:190px;
+        height:106px;
+    }
+
+
+    /*      section 게시판 부분      */
+    .section{
+        display: flex;
+    }
+    /* side_nav 왼쪽 */
+    .side_nav{
+        /* border:1px solid #484848; */
+        width: 150px;
+        flex-grow: 1;
+    }
+    .side_nav li{
+        border:1px solid rgb(199, 199, 199);
+        border-bottom: none;
+        height:50px;
+        line-height: 50px;
+        text-align: center;
+    }
+    #last_li{
+        border-bottom:1px solid rgb(199, 199, 199);
+    }
+    .side_nav li:hover{
+        background-color: #e2bcbc;
+    }
+    .side_nav a:hover{
+        color:white;
+    } 
+    .side_nav a:active{
+        color:white;
+    }
+    /* content 오른쪽 */
+
+    .sub_box{
+        display: flex;
+        height: 100px;
+        border-top: 1px solid #d4a5a5;
+        padding-top:20px;
+        margin-right:25px;
+        }
+    .sub_name{
+        display: flex;
+        flex-grow: 7;
+        justify-content: center;
+        align-items:center;
+        color:#484848;
+    }
+
+    .sub_search{
+        display: flex;
+        flex-grow: 0.1;
+        justify-content: center;
+        align-items:center;
+    }
+    .sub_search input{
+        height:25px;
+        line-height:25px;
+        justify-content: center;
+        align-items:center;
+        color:#8b8b8b;
+    }
+    .search_btn{
+        padding:1px 9px;
+        margin-left:5px;
+        font-size: 14px;
+        border:1px solid #888888;
+        border-radius: 2px;
+    }
+    .sub_box{
+        display: flex;
+        height: 120px;
+        border-top: 1px solid #d4a5a5;
+        border-bottom: 1px solid #d4a5a5;
+        
+    }
+    .sub_name{
+        display: flex;
+        flex-grow: 7;
+        justify-content: center;
+        align-items:center;
+        color:#484848;
+    }
+    .member_list{
+        flex-grow: 2;
+        padding-left: 20px;
+    }
+    .member_list form > input {
+        height: 30px;
+    }
+    .member_list table{
+        width: 98%;
+        text-align: center;
+    }
+    th{
+        background-color: #f7e7e7;
+    }
+    .member_list tr{
+        border-top:1px solid #d4a5a5;
+        height: 70px;
+        color:#484848;
+    }
+    .member_list tr:last-child{
+        border-bottom:2px solid #d4a5a5;
+    }
+
+    /*     글쓰기 버튼 부분      */
+    .back_sec{
+        display: flex; 
+        justify-content: center;
+        margin: 30px auto;
+    }
+    .back_btn{
+        width:150px;
+        height:50px;
+        background-color: #e2bcbc;
+        border:1px solid #d4a5a5;
+        border-radius: 3px;
+        color:white;
+        margin: auto 15px;
+    }
+    .clear_btn{
+        width:150px;
+        height:50px;
+        background-color: #d4a5a5;
+        border:1px solid #d4a5a5;
+        border-radius: 3px;
+        color:#484848;
+        margin: auto 15px;
+    }
+
+
+    /*     page number 부분      */
+    .page_number{
+        margin-top:10px;
+        display: flex;
+        justify-content: center;
+    }
+    .pagination{
+        display: flex;
+    }
+    .pagination a{
+        color:#484848;
+    }
+    .pagination li{
+        font-size: 12px;
+        list-style: none;
+    }
+
+    img{width: 100px; height: 100px}
+
+    input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder 
+    { /* WebKit browsers */ color:transparent; } 
+    input:focus:-moz-placeholder, textarea:focus:-moz-placeholder 
+    { /* Mozilla Firefox 4 to 18 */ color:transparent; } 
+    input:focus::-moz-placeholder, textarea:focus::-moz-placeholder 
+    { /* Mozilla Firefox 19+ */ color:transparent; } 
+    input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder 
+    { /* Internet Explorer 10+ */ color:transparent; }
+
+
+
+
+</style>
+</head>
+<body>
+        <div id="header">
+            <div id="top_fix">
+                <ul class="top_nav">
+                    <li><a href="#">logout</a></li>
+                    <li><a href="#">admin</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <img src="/img/logo_bijou.png">
+                <span>admin</span>
+            </div>
+        </div>
+        <div class="section">
+            <div class="aside">
+                <ul class="side_nav">
+                    <a href="#"><li>회원목록</li></a>
+                    <a href="#"><li>상품관리</li></a>
+                    <a href="#"><li>주문목록</li></a>
+                    <a href="#"><li>공지사항</li></a>
+                    <a href="#"><li id="last_li">1:1문의</li></a>
+                </ul>
+            </div>
+			<div class="member_list">
+                <div class="sub_box">
+                    <div class="sub_name"><h2>회원정보</h2></div>
+                </div>
+                <form action="member_list" method="post">
+                    <table class="member_info">
+                        <tr class="tr_header">
+                            <th>회원번호</th>
+                            <td>${memberDto.member_idx  }</td>
+                        </tr>
+                        <tr class="tr_header">
+                            <th>아이디</th>
+                            <td>${memberDto.member_id  }</td>
+                        </tr>
+                        <tr class="tr_header">
+                            <th>비밀번호</th>
+                            <td><input type="text" value="${ memberDto.member_pw }"></td>
+                        </tr>
+                        <tr class="tr_header">
+                            <th>이름</th>
+                            <td><input type="text" value="${ memberDto.member_name }"></td>
+                        </tr>
+                        <tr class="tr_header">
+                            <th>이메일</th>
+                            <td><input type="text" value="${ memberDto.member_email }"></td>
+                        </tr>
+                        <tr class="tr_header">
+                            <th>휴대폰번호</th>
+                            <td><input type="text" value="${ memberDto.member_phone }"></td>
+                        </tr>
+                        <tr class="tr_header">
+                            <th>주소</th>
+                            <td><input type="text" value="${ memberDto.member_address }"></td>
+                        </tr>
+                        <tr class="tr_header">
+                            <th>성별</th>
+                            <td>${ memberDto.member_gender }</td>
+                        </tr>
+                        <tr class="tr_header">
+                            <th>생일</th>
+                            <td>${ memberDto.member_birthdate }</td>
+                        </tr>
+                        <tr class="tr_header">
+                            <th>가입일</th>
+                            <td>${ memberDto.member_joindate }</td>
+                        </tr>
+                    </table>
+                </form>
+                <div class="back_sec">
+                    <a href="updateMember?member_idx=${memberDto.member_idx}"><button class="back_btn" value="수정">수정</button></a>
+                    <a href="member_list"><button class="back_btn" value="목록">목록</button></a>
+                </div>
+            </div>
+    </body>
+</html>
